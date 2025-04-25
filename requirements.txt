@@ -1,0 +1,11 @@
+llama-index
+llama-index-embeddings-azure-openai
+llama-index-vector-stores-faiss
+faiss-cpu
+spacy
+langchain
+langchain-community
+spacy_layout
+
+langchain_openai
+llama-index-embeddings-huggingface
