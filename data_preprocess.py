@@ -85,7 +85,8 @@ def make_llama_documents(text_data, df_row_heading, subfolder, file_name):
                         "company": subfolder,
                         "doc_id": "table_"+key,
                         "source": file_name.split(".")[0],
-                        "year": file_name.split("_")[-1].split(".")[0]
+                        "year": "2014",
+                        "quarter": file_name.split("_")[-1].split(".")[0]
                         }
                     )
             )
@@ -101,7 +102,8 @@ def make_llama_documents(text_data, df_row_heading, subfolder, file_name):
                     "company": subfolder,
                     "doc_id": "text_"+key,
                     "source": file_name.split(".")[0],
-                    "year": file_name.split("_")[-1].split(".")[0]
+                    "year": "2014",
+                    "quarter": file_name.split("_")[-1].split(".")[0]
                     }
                 )
         )

@@ -17,7 +17,7 @@ class LLamaIndexLLM():
 
         llm = AzureOpenAI(
             model="gpt-4o",
-            deployment_name=os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME_JUDGE'),
+            deployment_name=os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME'),
             api_key=os.getenv("API_KEY"),
             azure_endpoint=os.getenv("AZURE_ENDPOINT"),
             api_version=os.getenv("API_VERSION"),
@@ -55,13 +55,13 @@ class LLamaIndexLLM():
                 gc.collect()
 
     def setup(self):
-        self.query_engine2 = RouterQueryEngine(
+        self.query_engine = RouterQueryEngine(
             selector=LLMMultiSelector.from_defaults(),
             query_engine_tools=self.all_tools
         )
 
     def ask(self, question):
-        return self.query_engine2.query(question).response
+        return self.query_engine.query(question).response
     
 
 

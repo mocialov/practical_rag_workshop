@@ -55,7 +55,7 @@ class FinancialAnalystPrompt:
 def simple_parser(output):
     return AgentFinish(return_values={"output": output.content}, log=output.content)
 
-class LLM():
+class LangChainLLM():
     def __init__(self):
 
         Settings.llm = None
@@ -81,9 +81,7 @@ class LLM():
                 tool_config = IndexToolConfig(
                     query_engine=query_engine,
                     name=f"Company {subfolder} financial report for the 2024 quarter {subsubfolder}",
-                    description=f"helps answer queries about {subfolder} quarter {subsubfolder} report for year 2024",
-                    tool_kwargs={"return_direct": True, "return_sources": True},
-                    return_sources=True
+                    description=f"helps answer queries about {subfolder} quarter {subsubfolder} report for year 2024"
                 )
 
                 tool = LlamaIndexTool.from_tool_config(tool_config)
@@ -100,7 +98,7 @@ class LLM():
     def setup(self):
 
         llm = AzureChatOpenAI(
-            azure_deployment=os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME_JUDGE'),  # or your deployment
+            azure_deployment=os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME'),  # or your deployment
             api_version=os.getenv("API_VERSION"),
             azure_endpoint=os.getenv("AZURE_ENDPOINT"),
             api_key=os.getenv("API_KEY"),

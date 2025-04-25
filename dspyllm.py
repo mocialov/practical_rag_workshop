@@ -61,7 +61,7 @@ class DSPyLLM():
         self.llm = dspy.LM(api_base=os.getenv("AZURE_ENDPOINT"),
                 api_version=os.getenv("API_VERSION"),
                 api_key=os.getenv("API_KEY"),
-                model=f"azure/{os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME_JUDGE')}",
+                model=f"azure/{os.getenv('AZURE_CONVERSATIONAL_MODEL_DEPLOYMENT_NAME')}",
                 temperature=0.0,
                 cache=False)
         

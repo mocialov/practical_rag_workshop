@@ -1,11 +1,17 @@
-llama-index
-llama-index-embeddings-azure-openai
-llama-index-vector-stores-faiss
-faiss-cpu
-spacy
-langchain
-langchain-community
-spacy_layout
+#python3.10
 
-langchain_openai
-llama-index-embeddings-huggingface
+llama-index==0.12.33
+llama-index-embeddings-azure-openai==0.3.2
+llama-index-vector-stores-faiss==0.3.0
+llama-index-embeddings-huggingface==0.5.3
+
+faiss-cpu==1.10.0
+
+spacy==3.8.5
+spacy_layout==0.0.12
+
+langchain==0.3.24
+langchain-community==0.3.22
+langchain_openai==0.3.14
+
+dspy==2.6.13
